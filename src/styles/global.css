@@ -136,6 +136,15 @@ section[id] {
   font-size: 1.0625rem;
 }
 
+@media (max-width: 768px) {
+  .section-label,
+  .section-title,
+  .section-lead {
+    text-align: center;
+    margin-inline: auto;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

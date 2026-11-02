@@ -132,6 +132,38 @@
   background: var(--color-border);
 }
 
+@media (max-width: 768px) {
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .copy {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtitle {
+    max-width: 32ch;
+    margin-inline: auto;
+  }
+
+  .actions {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .statStrip {
+    max-width: 100%;
+    text-align: center;
+    justify-items: center;
+  }
+}
+
 @media (max-width: 640px) {
   .statStrip {
     grid-template-columns: 1fr;
