@@ -1,9 +1,7 @@
+import { IMG } from '../../data/images'
 import { useInView } from '../../hooks/useInView'
 import { scrollToBooking, scrollToSection } from '../../hooks/useScrollTo'
 import styles from './Hero.module.css'
-
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=85&auto=format&fit=crop'
 
 export function Hero() {
   const [ref, visible] = useInView<HTMLElement>()
@@ -12,7 +10,7 @@ export function Hero() {
     <section id="top" className={styles.hero} ref={ref} aria-labelledby="hero-title">
       <div className={styles.media}>
         <img
-          src={HERO_IMAGE}
+          src={IMG.hero}
           alt="Автомобиль в профессиональной мастерской"
           className={styles.image}
           width={1920}

@@ -21,11 +21,10 @@ export function Portfolio() {
         </header>
 
         <ul className={styles.grid}>
-          {PORTFOLIO.map((item, index) => (
+          {PORTFOLIO.map((item) => (
             <li
               key={item.id}
-              className={`${styles.item} ${item.wide ? styles.wide : ''} reveal ${visible ? 'is-visible' : ''}`}
-              style={{ transitionDelay: `${index * 0.07}s` }}
+              className={`${styles.item} ${item.wide ? styles.wide : ''}`}
             >
               <figure className={styles.figure}>
                 <img src={item.image} alt={item.title} width={item.wide ? 1200 : 800} height={600} loading="lazy" />

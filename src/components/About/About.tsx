@@ -1,10 +1,6 @@
+import { IMG } from '../../data/images'
 import { useInView } from '../../hooks/useInView'
 import styles from './About.module.css'
-
-const IMG_WORKSHOP =
-  'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&q=80&auto=format&fit=crop&crop=edges'
-const IMG_DETAIL =
-  'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=700&q=80&auto=format&fit=crop'
 
 const STEPS = [
   'Сначала диагностика — фиксируем симптомы и данные с блоков управления.',
@@ -22,10 +18,10 @@ export function About() {
         <div className={styles.layout}>
           <div className={`${styles.visual} reveal ${visible ? 'is-visible' : ''}`}>
             <figure className={styles.figureMain}>
-              <img src={IMG_WORKSHOP} alt="Интерьер автомастерской" width={900} height={600} loading="lazy" />
+              <img src={IMG.workshop} alt="Интерьер автомастерской" width={900} height={600} loading="lazy" />
             </figure>
             <figure className={`${styles.figureInset} reveal reveal-delay-2 ${visible ? 'is-visible' : ''}`}>
-              <img src={IMG_DETAIL} alt="Рабочий процесс в сервисе" width={700} height={500} loading="lazy" />
+              <img src={IMG.detail} alt="Рабочий процесс в сервисе" width={700} height={500} loading="lazy" />
             </figure>
           </div>
 
