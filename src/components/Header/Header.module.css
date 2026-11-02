@@ -2,7 +2,8 @@
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
-  height: var(--header-h);
+  min-height: var(--header-h);
+  height: auto;
   display: flex;
   align-items: center;
   border-bottom: 1px solid transparent;
@@ -23,6 +24,7 @@
   align-items: center;
   gap: var(--space-md);
   width: 100%;
+  padding-block: 0.5rem;
 }
 
 .logo {
@@ -51,8 +53,9 @@
 
 .navList {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -174,7 +177,7 @@
   width: 100%;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   .nav {
     display: none;
   }

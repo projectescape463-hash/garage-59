@@ -21,7 +21,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     title: 'Работа с подвеской',
     caption: 'Концепт · демо-фото',
     image:
-      'https://images.unsplash.com/photo-1625047509248-ec889cbff075?w=800&q=80&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80&auto=format&fit=crop&crop=entropy',
   },
   {
     id: 'p3',

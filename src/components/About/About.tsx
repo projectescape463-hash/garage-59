@@ -2,7 +2,7 @@ import { useInView } from '../../hooks/useInView'
 import styles from './About.module.css'
 
 const IMG_WORKSHOP =
-  'https://images.unsplash.com/photo-1632823471562-5444f3982c83?w=900&q=80&auto=format&fit=crop'
+  'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&q=80&auto=format&fit=crop&crop=edges'
 const IMG_DETAIL =
   'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=700&q=80&auto=format&fit=crop'
 
