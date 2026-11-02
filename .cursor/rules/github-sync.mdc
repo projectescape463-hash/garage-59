@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Синхронизация с GitHub
 
-Репозиторий: `garage-59` на GitHub пользователя (remote `origin`).
+Репозиторий: `projectescape463-hash/garage-59` (remote `origin`).
 
 После каждого запроса пользователя, если были изменения в коде проекта:
 

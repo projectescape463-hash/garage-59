@@ -15,8 +15,8 @@ npm run dev
 
 Публичный адрес после первого успешного деплоя:
 
-**https://USERNAME.github.io/garage-59/**
+Публичный сайт: **https://projectescape463-hash.github.io/garage-59/**
 
-(подставьте свой логин GitHub вместо `USERNAME`)
+Репозиторий: **https://github.com/projectescape463-hash/garage-59**
 
 Демо-контакты и цены: `src/data/`.
