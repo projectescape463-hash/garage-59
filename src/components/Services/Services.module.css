@@ -1,0 +1,120 @@
+.section {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  align-items: end;
+}
+
+.lead {
+  justify-self: end;
+  text-align: left;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.item {
+  grid-column: span 4;
+  background: var(--color-bg-elevated);
+  min-height: 100%;
+}
+
+.featured {
+  grid-column: span 8;
+  grid-row: span 1;
+}
+
+.itemInner {
+  height: 100%;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: background-color 0.3s;
+}
+
+.item:hover .itemInner {
+  background: var(--color-bg-muted);
+}
+
+.featured .itemInner {
+  padding: var(--space-xl) var(--space-lg);
+  border-left: 3px solid var(--color-accent);
+}
+
+.index {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.featured .name {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.desc {
+  margin: 0;
+  flex: 1;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  max-width: 48ch;
+}
+
+.price {
+  margin: var(--space-sm) 0 0;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    justify-self: start;
+  }
+
+  .item,
+  .featured {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .item,
+  .featured {
+    grid-column: span 12;
+  }
+
+  .featured .itemInner {
+    padding: var(--space-lg);
+  }
+}

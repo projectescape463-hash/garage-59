@@ -1,0 +1,128 @@
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: var(--space-xl);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+}
+
+.intro {
+  max-width: 22rem;
+}
+
+.alt {
+  margin: var(--space-lg) 0 0;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.phoneLink {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-accent);
+  transition: color 0.2s;
+}
+
+.phoneLink:hover {
+  color: var(--color-accent-hover);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  align-content: start;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color 0.2s;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: #a84848;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: #e08888;
+}
+
+.submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: var(--space-xs);
+}
+
+.success {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-accent-muted);
+  background: var(--color-bg-muted);
+}
+
+.successTitle {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.successText {
+  margin: 0 0 var(--space-md);
+  color: var(--color-text-muted);
+  max-width: 40ch;
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    padding: var(--space-lg);
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
