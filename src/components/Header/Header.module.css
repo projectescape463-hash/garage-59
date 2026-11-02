@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   inset: 0 0 auto;
-  z-index: 100;
+  z-index: 201;
   min-height: var(--header-h);
   height: auto;
   display: flex;
@@ -145,57 +145,69 @@
   transition: transform 0.25s;
 }
 
-.mobilePanel {
+.mobileOverlayRoot {
   position: fixed;
-  inset: var(--header-h) 0 0;
-  z-index: 150;
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-lg) var(--space-md) var(--space-xl);
-  overflow-y: auto;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-8px);
-  transition:
-    transform 0.35s var(--ease-out),
-    opacity 0.3s var(--ease-out),
-    visibility 0.3s;
+  inset: 0;
+  z-index: 200;
+  pointer-events: auto;
 }
 
-.mobileOpen {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+.mobileBackdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(8, 8, 8, 0.92);
+  cursor: pointer;
+}
+
+.mobilePanel {
+  position: absolute;
+  inset: var(--header-h) 0 0;
+  z-index: 1;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-md) var(--space-xl);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileNavInner {
   max-width: 22rem;
   margin-inline: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .mobileList {
   list-style: none;
-  margin: 0 0 var(--space-lg);
+  margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
 }
 
 .mobileLink {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 0.85rem 0;
+  padding: 0.9rem 0.5rem;
   border: none;
   border-bottom: 1px solid var(--color-border);
   background: none;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text);
+  line-height: 1.2;
 }
 
 .mobilePhone {

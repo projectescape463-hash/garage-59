@@ -21,9 +21,26 @@ export function Header({ menuOpen, onMenuToggle, onMenuClose }: HeaderProps) {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    if (!menuOpen) {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      return
+    }
+
+    const scrollY = window.scrollY
+    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = '100%'
+
     return () => {
       document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, scrollY)
     }
   }, [menuOpen])
 
@@ -41,38 +58,10 @@ export function Header({ menuOpen, onMenuToggle, onMenuClose }: HeaderProps) {
     scrollToSection(id)
   }
 
-  const mobileMenu = (
-    <div
-      id="mobile-menu"
-      className={`${styles.mobilePanel} ${menuOpen ? styles.mobileOpen : ''}`}
-      aria-hidden={!menuOpen}
-    >
-      <nav aria-label="Мобильная навигация" className={styles.mobileNavInner}>
-        <ul className={styles.mobileList}>
-          {NAV_LINKS.map(({ id, label }) => (
-            <li key={id}>
-              <button type="button" className={styles.mobileLink} onClick={() => handleNav(id)}>
-                {label}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <a href={DEMO_PHONE_HREF} className={styles.mobilePhone}>
-          {DEMO_PHONE}
-        </a>
-        <button
-          type="button"
-          className={`btn btn-primary ${styles.mobileCta}`}
-          onClick={() => {
-            onMenuClose()
-            scrollToBooking()
-          }}
-        >
-          Записаться
-        </button>
-      </nav>
-    </div>
-  )
+  const handleNavClick = (id: string) => {
+    onMenuClose()
+    window.requestAnimationFrame(() => scrollToSection(id))
+  }
 
   return (
     <>
@@ -131,7 +120,49 @@ export function Header({ menuOpen, onMenuToggle, onMenuClose }: HeaderProps) {
           </div>
         </div>
       </header>
-      {createPortal(mobileMenu, document.body)}
+
+      {menuOpen &&
+        createPortal(
+          <div className={styles.mobileOverlayRoot} role="presentation">
+            <button
+              type="button"
+              className={styles.mobileBackdrop}
+              aria-label="Закрыть меню"
+              onClick={onMenuClose}
+            />
+            <div id="mobile-menu" className={styles.mobilePanel} role="dialog" aria-modal="true" aria-label="Меню">
+              <nav aria-label="Мобильная навигация" className={styles.mobileNavInner}>
+                <ul className={styles.mobileList}>
+                  {NAV_LINKS.map(({ id, label }) => (
+                    <li key={id}>
+                      <button
+                        type="button"
+                        className={styles.mobileLink}
+                        onClick={() => handleNavClick(id)}
+                      >
+                        {label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <a href={DEMO_PHONE_HREF} className={styles.mobilePhone}>
+                  {DEMO_PHONE}
+                </a>
+                <button
+                  type="button"
+                  className={`btn btn-primary ${styles.mobileCta}`}
+                  onClick={() => {
+                    onMenuClose()
+                    scrollToBooking()
+                  }}
+                >
+                  Записаться
+                </button>
+              </nav>
+            </div>
+          </div>,
+          document.body,
+        )}
     </>
   )
 }
