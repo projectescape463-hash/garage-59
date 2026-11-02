@@ -116,6 +116,21 @@
   max-width: 40ch;
 }
 
+@media (max-width: 768px) {
+  .intro {
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .submit {
+    justify-self: center;
+  }
+
+  .successText {
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 800px) {
   .wrap {
     grid-template-columns: 1fr;

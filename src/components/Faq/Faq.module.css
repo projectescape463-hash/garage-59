@@ -105,6 +105,21 @@
   font-size: 0.9375rem;
 }
 
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .trigger {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .answer {
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 720px) {
   .layout {
     grid-template-columns: 1fr;

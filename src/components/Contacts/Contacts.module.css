@@ -63,6 +63,14 @@
 }
 
 @media (max-width: 768px) {
+  .details {
+    align-items: center;
+  }
+
+  .mapNote {
+    text-align: center;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }

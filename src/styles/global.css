@@ -143,6 +143,16 @@ section[id] {
     text-align: center;
     margin-inline: auto;
   }
+
+  main {
+    text-align: center;
+  }
+
+  main form,
+  main input,
+  main textarea {
+    text-align: left;
+  }
 }
 
 .btn {

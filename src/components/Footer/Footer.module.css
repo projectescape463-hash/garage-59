@@ -80,9 +80,19 @@
 @media (max-width: 720px) {
   .inner {
     grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .links {
+    justify-content: center;
   }
 
   .meta {
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .tagline {
+    margin-inline: auto;
   }
 }

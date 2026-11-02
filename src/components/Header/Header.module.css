@@ -13,9 +13,8 @@
 }
 
 .scrolled {
-  background: rgba(8, 8, 8, 0.92);
+  background: rgba(8, 8, 8, 0.97);
   border-color: var(--color-border);
-  backdrop-filter: blur(8px);
 }
 
 .inner {
@@ -118,6 +117,12 @@
   font-size: 0.8125rem;
 }
 
+.ctaCompact {
+  display: none;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.75rem;
+}
+
 .burger {
   display: none;
   flex-direction: column;
@@ -143,21 +148,32 @@
 .mobilePanel {
   position: fixed;
   inset: var(--header-h) 0 0;
+  z-index: 150;
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
-  padding: var(--space-lg) var(--space-md);
-  transform: translateY(-100%);
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  overflow-y: auto;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  transform: translateY(-8px);
   transition:
-    transform 0.4s var(--ease-out),
-    opacity 0.35s;
+    transform 0.35s var(--ease-out),
+    opacity 0.3s var(--ease-out),
+    visibility 0.3s;
 }
 
 .mobileOpen {
-  transform: translateY(0);
+  visibility: visible;
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobileNavInner {
+  max-width: 22rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .mobileList {
@@ -205,6 +221,10 @@
 
   .cta {
     display: none;
+  }
+
+  .ctaCompact {
+    display: inline-flex;
   }
 
   .burger {

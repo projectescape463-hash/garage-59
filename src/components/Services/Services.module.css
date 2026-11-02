@@ -93,13 +93,39 @@
   color: var(--color-text);
 }
 
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .itemInner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .desc {
+    margin-inline: auto;
+  }
+
+  .featured .itemInner {
+    border-left: none;
+    border-top: 3px solid var(--color-accent);
+  }
+}
+
 @media (max-width: 900px) {
   .header {
     grid-template-columns: 1fr;
   }
 
   .lead {
-    justify-self: start;
+    justify-self: center;
+    text-align: center;
   }
 
   .item,
